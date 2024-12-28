@@ -15,19 +15,37 @@
                     <div class="uk-grid uk-flex-center">
                         <div class="uk-width-3-5@m">
                             <div class="uk-text-center in-padding-horizontal@s">
-                                <a class="uk-logo" href="index.html">
+                               {{--  <a class="uk-logo" href="index.html">
                                     <img src="images/in-lazy.gif" data-src="img/user/header-logo-7aod97.svg" alt="logo" width="130" height="36" data-uk-img="">
-                                </a>
+                                </a> --}}
                                 <p class="uk-text-lead uk-margin-small-top uk-margin-medium-bottom">Log into your account</p>
                                 <!-- login form begin -->
-                                <form class="uk-grid uk-form">
+
+                                @if (Session::has('success'))
+                                <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+                                    <strong>Success!</strong> {{ Session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @endif
+                            @error('email')
+                                <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                                    <span class="fs-5"><strong>Errors!</strong> {{ $message }}</span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @enderror
+                                <form class="uk-grid uk-form" method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="uk-margin-small uk-width-1-1 uk-inline">
-                                        <span class="uk-form-icon uk-form-icon-flip fas fa-user fa-sm"></span>
-                                        <input class="uk-input uk-border-rounded" id="username" value="" type="text" placeholder="Username">
+                                        <span class="uk-form-icon uk-form-icon-flip fas fa-envelope fa-sm"></span>
+                                       {{--  <input class="uk-input uk-border-rounded" id="username" value="" type="text" placeholder="Username"> --}}
+                                       <input class="uk-input uk-border-rounded" id="email" value="" type="text" placeholder="Email" name="email" placeholder="name@example.com"
+                                       name="email" value="{{ old('email') }}" required>
+                                      {{--  <label for="floatingInput">Email address</label> --}}
                                     </div>
                                     <div class="uk-margin-small uk-width-1-1 uk-inline">
                                         <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
-                                        <input class="uk-input uk-border-rounded" id="password" value="" type="email" placeholder="Password">
+                                        <input class="uk-input uk-border-rounded" id="password" value="" type="password" placeholder="Password" required>
                                     </div>
                                     <div class="uk-margin-small uk-width-auto uk-text-small">
                                         <label><input class="uk-checkbox" type="checkbox"> Remember me</label>
@@ -45,7 +63,7 @@
                                     <a class="uk-button uk-button-primary uk-button-small uk-border-rounded color-google" href="#"><i class="fab fa-google uk-margin-small-right"></i>Google</a>
                                     <a class="uk-button uk-button-primary uk-button-small uk-border-rounded uk-margin-small-left color-facebook" href="#"><i class="fab fa-facebook-f uk-margin-small-right"></i>Facebook</a>
                                 </div>
-                                <span class="uk-text-small">Don't have an account? <a href="#">Register here</a></span>
+                                <span class="uk-text-small">Don't have an account? <a href="{{ route('register') }}">Register here</a></span>
                             </div>
                         </div>
                     </div>

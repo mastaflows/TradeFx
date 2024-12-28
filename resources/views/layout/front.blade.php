@@ -169,7 +169,7 @@
                     <div class="uk-navbar-right uk-width-auto">
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             <div>
-                                <a href="index.html" class="uk-button uk-button-link">Login</a>
+                                <a href="{{ Route('login') }}" class="uk-button uk-button-link">Login</a>
                                 <a href="{{ Route('register') }}" class="uk-button uk-button-link">Sign up</a>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                     </div>
                     <div class="uk-flex-first uk-flex-last@m">
                         <div class="footer-logo">
-                            <img class="uk-margin-bottom uk-display-block" src="images/footer-logo-wXvCAq.svg" alt="footer-logo" width="130" height="36" data-uk-img="">
+                            <img class="uk-margin-bottom uk-display-block" src="front/logo3.png" alt="footer-logo" width="200" height="100" data-uk-img="">
                         </div>
                         <ul class="uk-list uk-link-text uk-margin-remove-top">
                             <li><a href="#"><i class="fas fa-envelope uk-margin-small-right"></i>info@profit.id</a></li>

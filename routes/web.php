@@ -1,8 +1,13 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+//use Illuminate\Support\Facades\Password;
+use Illuminate\Validation\Rules\Password;
 use App\Http\Controllers\User\Auth\UserController;
+
 
 Route::get('/', function () {
     return view('welcome');

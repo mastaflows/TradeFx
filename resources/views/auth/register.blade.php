@@ -20,7 +20,8 @@
                                 </a>
                                 <p class="uk-text-lead uk-margin-small-top uk-margin-medium-bottom fs-sm">Sign Up</p>
                                 <!-- login form begin -->
-                                <form class="uk-grid uk-form"  method="POST" action="{{route('register')}}">
+                                <form class="uk-grid uk-form"  method="POST" action="{{ route('register') }}">
+                                    @csrf
                                     <div class="uk-margin-small uk-width-1-1 uk-inline">
                                         <span class="uk-form-icon uk-form-icon-flip fas fa-user fa-sm"></span>
                                         <input class="uk-input uk-border-rounded" id="name" value="" type="text" placeholder="name" name="name">
@@ -76,13 +77,13 @@
                                     </div>
                                     <div class="uk-margin-small uk-width-1-1 uk-inline">
                                         <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
-                                        <input class="uk-input uk-border-rounded" id="password" value="" type="Confirm Password" placeholder="Confirm_Password">
+                                        <input class="uk-input uk-border-rounded" id="password" value="" type="Password" placeholder="Confirm_Password">
                                         @error('confirm_password')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                     </div>
                                     <div class="uk-margin-small uk-width-expand uk-text-small">
-                                        <label class="uk-align-right"><a class="uk-link-reset" href="#">Already have an account? LOGIN</label>
+                                        <label class="uk-align-right"><a class="uk-link-reset">Already have an account?</label>
                                     </div>
                                     <div class="uk-margin-small uk-width-1-1">
                                         <button class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-float-left" type="submit" name="submit">Sign in</button>
