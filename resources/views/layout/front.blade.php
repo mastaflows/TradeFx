@@ -27,7 +27,7 @@
     <title>@yield('title')|TradeFx</title>
 </head>
 
-<body>
+<body >
     <!-- page loader begin -->
     <div class="page-loader">
         <div></div>
@@ -37,7 +37,7 @@
     <!-- page loader end -->
     <!-- header begin -->
     <header>
-        <div class="uk-section uk-padding-small in-profit-ticker">
+        <div class="uk-section uk-background-secondary uk-padding-small in-profit-ticker">
             <div class="uk-container">
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
@@ -122,48 +122,16 @@
                         </a>
                         <ul class="uk-navbar-nav uk-visible@m">
                             <li><a href="{{ url('/') }}">Home{{-- <span data-uk-navbar-parent-icon=""> --}}</span></a>
-                                {{-- <div class="uk-navbar-dropdown">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                                        <li><a href="homepage2.html">Homepage 2</a></li>
-                                        <li><a href="homepage3.html">Homepage 3</a></li>
-                                        <li><a href="homepage4.html">Homepage 4</a></li>
-                                    </ul>
-                                </div> --}}
+
                             </li>
                             <li><a href="{{ Route('market') }}">Markets</a>
                             </li>
                             <li><a href="{{ Route('about') }}">About{{-- <span data-uk-navbar-parent-icon=""> --}}</span></a>
-                                {{-- <div class="uk-navbar-dropdown">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="careers.html">Careers</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div> --}}
+
                             </li>
                             <li><a href="{{ Route('contact')}}">Contact</a>
                             </li>
-                            {{-- <li><a href="#">Resources<span data-uk-navbar-parent-icon=""></span></a>
-                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
-                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-2" data-uk-grid="">
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li><a href="https://getuikit.com/docs/introduction">Documentation<i class="fas fa-square-arrow-up-right fa-sm"></i></a></li>
-                                                <li><a href="help-center.html">Help Center</a></li>
-                                                <li><a href="customers.html">Customers</a></li>
-                                                <li><a href="roadmap.html">Roadmap</a></li>
-                                                <li><a href="legal-docs.html">Legal Docs<i class="fas fa-gavel fa-sm"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li><a class="uk-disabled" href="#">Adipiscing elit sed do eiusmod incididunt ut labore dolore magna lorem ipsum sit dolor amet consectetur</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li> --}}
+
                         </ul>
                     </div>
                     <div class="uk-navbar-right uk-width-auto">
@@ -261,6 +229,7 @@
     <script src="js/tp.widget.bootstrap.min.js" defer=""></script>
     <script src="js/utilities.min.js"></script>
     <script src="js/config-theme.js"></script>
+
 
 
 </body></html>

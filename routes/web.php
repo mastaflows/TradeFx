@@ -2,11 +2,13 @@
 
 use App\Models\User;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-//use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\Rules\Password;
 use App\Http\Controllers\User\Auth\UserController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Http\Controllers\User\Auth\UserControllerfunction;
 
 
 Route::get('/', function () {
@@ -27,9 +29,9 @@ Route::get('/contact', function () {
 
 
 Route::controller(AuthController::class)->middleware('guest')->group(function () {
-    ROute::get('/register', 'register')->name('register');
+    Route::get('/register', 'register')->name('register.form');
     Route::post('/register', 'doregister')->name('register');
-    ROute::get('/login', 'loginpage')->name('login');
+    Route::get('/login', 'loginpage')->name('login.form');
     Route::post('/login', 'dologin')->name('login');
 });
 

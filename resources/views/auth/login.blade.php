@@ -18,23 +18,47 @@
                                {{--  <a class="uk-logo" href="index.html">
                                     <img src="images/in-lazy.gif" data-src="img/user/header-logo-7aod97.svg" alt="logo" width="130" height="36" data-uk-img="">
                                 </a> --}}
-                                <p class="uk-text-lead uk-margin-small-top uk-margin-medium-bottom">Log into your account</p>
+                                <p class="uk-text-lead uk-margin-small-top ">Log into your account</p>
                                 <!-- login form begin -->
 
-                                @if (Session::has('success'))
-                                <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
-                                    <strong>Success!</strong> {{ Session('success') }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @endif
+@if (Session::has('success'))
+    <div id="success-alert" class="uk-alert uk-alert-success mb-3 fade-in" role="alert" uk-alert>
+        <strong>Success!</strong> {{ Session('success') }}
+    </div>
+    <style>
+        /* Add smooth fade-out transition */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out; /* Adjust transition duration */
+        }
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set timeout to apply fade-out effect and close the alert
+            setTimeout(() => {
+                const alert = document.getElementById('success-alert');
+                if (alert) {
+                    alert.classList.add('fade-out'); // Add fade-out class
+                    setTimeout(() => {
+                        UIkit.alert(alert).close(); // Close using UIKit's method after transition
+                    }, 1000); // Match transition duration (0.5s = 500ms)
+                }
+            }, 3000); // Duration before fade-out starts
+        });
+    </script>
+@endif
+
+
                             @error('email')
                                 <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
                                     <span class="fs-5"><strong>Errors!</strong> {{ $message }}</span>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             @enderror
-                                <form class="uk-grid uk-form" method="POST" action="{{ route('login') }}">
+                                <form class="uk-grid uk-form" method="POST" action="{{Route('login')}}">
                                     @csrf
                                     <div class="uk-margin-small uk-width-1-1 uk-inline">
                                         <span class="uk-form-icon uk-form-icon-flip fas fa-envelope fa-sm"></span>

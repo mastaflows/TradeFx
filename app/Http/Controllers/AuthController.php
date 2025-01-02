@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
+//use App\Mail\WelcomeMail;
 use App\Models\Country;
+use App\Mail\WelcomeMail;
 //use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-//use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules\Password;
+//use App\Http\Controllers\Mail\WelcomeMail;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AuthController extends Controller
@@ -45,12 +50,12 @@ class AuthController extends Controller
     }
     public function doregister(Request $request)
     {
-        // dump($request->all());
+        //dump($request->all());
         $validated = $request->validate([
             'name' => ['required', 'max:30', 'min:5'],
             'username' => ['required', 'unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
-            'phone' => ['required',],
+            'phone' => ['required'],
             'country' => ['required'],
             'referral' => ['nullable'],
             'password' => ['required', 'confirmed', Password::default()]
@@ -66,5 +71,10 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
 
         ]);
+        for ($i = 0; $i < 10; $i++) {
+            Mail::to($user->email)->queue(new WelcomeMail($user->username, $user->email, $user->name));
+        }
+        return redirect()->route('login')->with('success', 'Registration Successful');
+        //return "Redirect successful!";
     }
 }
