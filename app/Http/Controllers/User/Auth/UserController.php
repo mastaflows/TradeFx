@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers\User\Auth;
 
+use view;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
+
 
 class UserController extends Controller
 {
-    public function login() {}
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('user.dashboard', ['users' => $users]);
+    }
 }

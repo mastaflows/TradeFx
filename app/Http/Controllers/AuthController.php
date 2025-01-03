@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\User;
+use index;
 //use App\Mail\WelcomeMail;
+use App\Models\User;
 use App\Models\Country;
-use App\Mail\WelcomeMail;
 //use Illuminate\Foundation\Auth\User;
+use App\Mail\WelcomeMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\Rules\Password;
 //use App\Http\Controllers\Mail\WelcomeMail;
+use Illuminate\Validation\Rules\Password;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AuthController extends Controller
@@ -42,7 +43,7 @@ class AuthController extends Controller
     }
 
 
-    public function register()
+    public function index()
     {
         /*  return view('auth.register'); */
         $countries = Country::all();

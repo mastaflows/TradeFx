@@ -29,14 +29,15 @@ Route::get('/contact', function () {
 
 
 Route::controller(AuthController::class)->middleware('guest')->group(function () {
-    Route::get('/register', 'register')->name('register.form');
+    Route::get('/register', 'index')->name('register.form');
     Route::post('/register', 'doregister')->name('register');
     Route::get('/login', 'loginpage')->name('login.form');
     Route::post('/login', 'dologin')->name('login');
 });
 
+Route::resource('user', UserController::class);
 Route::middleware('auth')->prefix('/user')->name('user.')->group(function () {
-    Route::controller(UserController::class)->group(function () {
+    /*   Route::controller(UserController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard');
-    });
+    }); */
 });
