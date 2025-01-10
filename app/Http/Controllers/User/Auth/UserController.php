@@ -15,4 +15,10 @@ class UserController extends Controller
         $users = User::paginate(10);
         return view('user.dashboard', ['users' => $users]);
     }
+
+    public function show($user)
+    {
+        $user = User::find(decrypt($user));
+        return view('user.view-user', ['user' => $user]);
+    }
 }

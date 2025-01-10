@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container mt-5 col-10 mx-auto ">
-        <div class="card p-3 mb-2 bg-primary-subtle">
+        <div class="card p-3 mb-2">
             <div class="card-header">
                 <div class="card-title">
                     All Users ({{ count($users) }})
@@ -42,7 +42,7 @@
                             <td>{{ \carbon\carbon::parse($user->created_at)->format('d D-M-Y') }}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="" class="btn btn-primary" title="View"><i class="bi bi-eye-fill"></i></a>&nbsp;
+                                    <a href="{{ route('user.show',['user'=>encrypt($user->id)])}}" class="btn btn-primary" title="View"><i class="bi bi-eye-fill"></i></a>&nbsp;
                                     <a href=""class="btn btn-danger" title="Delete"><i class="bi-trash"></i></a>
                                 </div>
                             </td>
