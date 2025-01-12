@@ -1,14 +1,16 @@
 <?php
 
+
 use App\Models\User;
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Validation\Rules\Password;
 use App\Http\Controllers\User\Auth\UserController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use App\Http\Controllers\User\Auth\UserControllerfunction;
+
+//use Symfony\Component\HttpFoundation\RedirectResponse;
+//use App\Http\Controllers\User\Auth\UserControllerfunction;
 
 
 Route::get('/', function () {
@@ -36,7 +38,11 @@ Route::controller(AuthController::class)->middleware('guest')->group(function ()
 });
 
 Route::resource('user', UserController::class);
-Route::middleware('auth')->prefix('/user')->name('user.')->group(function () {
+Route::middleware('guest')->prefix('/user')->name('user.')->group(function () {
+    Route::resource('user', UserController::class);
+
+
+
     /*   Route::controller(UserController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard');
     }); */
