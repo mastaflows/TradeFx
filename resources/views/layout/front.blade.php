@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="{{ str_replace('_', '-', app()->getLocale()) }}"><head>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,9 +28,10 @@
     <!-- touch icon -->
     <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
     <title>@yield('title')|TradeFx</title>
+
 </head>
 
-<body >
+<body>
     <!-- page loader begin -->
     <div class="page-loader">
         <div></div>
@@ -42,7 +46,8 @@
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
                         <div data-uk-slider="autoplay: true; autoplay-interval: 5000">
-                            <ul class="uk-grid-large uk-slider-items uk-child-width-1-3@s uk-child-width-1-6@m uk-text-center" data-uk-grid="">
+                            <ul class="uk-grid-large uk-slider-items uk-child-width-1-3@s uk-child-width-1-6@m uk-text-center"
+                                data-uk-grid="">
                                 <li>
                                     <div class="in-icon-wrap small circle up">
                                         <i class="fas fa-angle-up"></i>
@@ -118,7 +123,8 @@
                 <div class="uk-container" data-uk-navbar="">
                     <div class="uk-navbar-left uk-width-expand uk-flex uk-flex-between">
                         <a class="uk-navbar-item uk-logo" href="index.html">
-                            <img src="images/in-lazy.gif" data-src="front/logo3.png" alt="logo" width="180" height="92" data-uk-img="">
+                            <img src="images/in-lazy.gif" data-src="front/logo3.png" alt="logo" width="180"
+                                height="92" data-uk-img="">
                         </a>
                         <ul class="uk-navbar-nav uk-visible@m">
                             <li><a href="{{ url('/') }}">Home{{-- <span data-uk-navbar-parent-icon=""> --}}</span></a>
@@ -129,7 +135,7 @@
                             <li><a href="{{ Route('about') }}">About{{-- <span data-uk-navbar-parent-icon=""> --}}</span></a>
 
                             </li>
-                            <li><a href="{{ Route('contact')}}">Contact</a>
+                            <li><a href="{{ Route('contact') }}">Contact</a>
                             </li>
 
                         </ul>
@@ -152,7 +158,8 @@
 
     <!-- footer begin -->
     <footer>
-        <div class="uk-section uk-section-secondary uk-padding-large uk-padding-remove-horizontal uk-margin-medium-top">
+        <div
+            class="uk-section uk-section-secondary uk-padding-large uk-padding-remove-horizontal uk-margin-medium-top">
             <div class="uk-container">
                 <div class="uk-child-width-1-2@s uk-child-width-1-5@m uk-flex uk-margin-small-top" data-uk-grid="">
                     <div>
@@ -187,19 +194,28 @@
                     </div>
                     <div class="uk-flex-first uk-flex-last@m">
                         <div class="footer-logo">
-                            <img class="uk-margin-bottom uk-display-block" src="front/logo3.png" alt="footer-logo" width="200" height="100" data-uk-img="">
+                            <img class="uk-margin-bottom uk-display-block" src="front/logo3.png" alt="footer-logo"
+                                width="200" height="100" data-uk-img="">
                         </div>
                         <ul class="uk-list uk-link-text uk-margin-remove-top">
-                            <li><a href="#"><i class="fas fa-envelope uk-margin-small-right"></i>info@profit.id</a></li>
-                            <li><a href="#"><i class="fas fa-map-marker-alt uk-margin-small-right"></i>Jakarta, Indonesia</a></li>
+                            <li><a href="#"><i
+                                        class="fas fa-envelope uk-margin-small-right"></i>info@profit.id</a></li>
+                            <li><a href="#"><i class="fas fa-map-marker-alt uk-margin-small-right"></i>Jakarta,
+                                    Indonesia</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="uk-grid uk-flex uk-flex-center uk-margin-large-top uk-margin-small-bottom" data-uk-grid="">
+                <div class="uk-grid uk-flex uk-flex-center uk-margin-large-top uk-margin-small-bottom"
+                    data-uk-grid="">
                     <div class="uk-width-5-6@m uk-margin-bottom">
                         <div class="footer-warning in-margin-top-20@s">
                             <h5 class="uk-text-small uk-text-uppercase"><span>Risk Warning</span></h5>
-                            <p class="uk-text-small">Trading derivatives and leveraged products carries a high level of risk, including the risk of losing substantially more than your initial investment. It is not suitable for everyone. Before you make any decision in relation to a financial product you should obtain and consider our Product Disclosure Statement (PDS) and Financial Services Guide (FSG) available on our website and seek independent advice if necessary </p>
+                            <p class="uk-text-small">Trading derivatives and leveraged products carries a high level of
+                                risk, including the risk of losing substantially more than your initial investment. It
+                                is not suitable for everyone. Before you make any decision in relation to a financial
+                                product you should obtain and consider our Product Disclosure Statement (PDS) and
+                                Financial Services Guide (FSG) available on our website and seek independent advice if
+                                necessary </p>
                         </div>
                     </div>
                     <div class="uk-width-1-2@m">
@@ -208,10 +224,17 @@
                     <div class="uk-width-1-2@m uk-flex uk-flex-right@m">
                         <!-- social media begin -->
                         <div class="uk-flex social-media-list">
-                        <div><a href="https://www.facebook.com/indonez" class="color-facebook text-decoration-none"><i class="fab fa-facebook-square"></i> Facebook</a></div>
-                        <div><a href="https://twitter.com/indonez_tw" class="color-twitter text-decoration-none"><i class="fab fa-twitter"></i> Twitter</a></div>
-                        <div><a href="https://www.instagram.com/indonez_ig" class="color-instagram text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a></div>
-                        <div><a href="#some-link" class="color-youtube text-decoration-none"><i class="fab fa-youtube"></i> Youtube</a></div>
+                            <div><a href="https://www.facebook.com/indonez"
+                                    class="color-facebook text-decoration-none"><i class="fab fa-facebook-square"></i>
+                                    Facebook</a></div>
+                            <div><a href="https://twitter.com/indonez_tw"
+                                    class="color-twitter text-decoration-none"><i class="fab fa-twitter"></i>
+                                    Twitter</a></div>
+                            <div><a href="https://www.instagram.com/indonez_ig"
+                                    class="color-instagram text-decoration-none"><i class="fab fa-instagram"></i>
+                                    Instagram</a></div>
+                            <div><a href="#some-link" class="color-youtube text-decoration-none"><i
+                                        class="fab fa-youtube"></i> Youtube</a></div>
                         </div>
                         <!-- social media end -->
                     </div>
@@ -232,4 +255,6 @@
 
 
 
-</body></html>
+</body>
+
+</html>

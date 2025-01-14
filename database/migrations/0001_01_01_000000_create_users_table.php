@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
+            $table->string('fullname');
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('country');
+            $table->date('date_of_registration');
             $table->string('referral')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
