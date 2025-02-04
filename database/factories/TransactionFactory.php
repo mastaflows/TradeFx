@@ -21,7 +21,7 @@ class TransactionFactory extends Factory
     {
         return [
             'user_id' => User::class,
-            'transaction_id' => str::random(8),
+            'transaction_id' => Str::upper(str::random(8)),
             'amount' => fake()->numberBetween(100, 1000),
             'type' => fake()->randomElement(['credit', 'debit']),
 

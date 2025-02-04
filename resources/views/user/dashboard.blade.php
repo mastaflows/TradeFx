@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    @livewireStyles
 </head>
 
 <body>
@@ -18,10 +19,15 @@
             <div class="card-header">
                 <div class="card-title">
                     All Users ({{ count($users) }})
-                    <div class="div">
-                        <button onclick="window.location='{{ route('add-record') }}'" class="btn btn-primary">
-                            Add Record
-                        </button>
+
+                    <div class="">
+                        <form type="submit">
+                            <button wire:click="add-record" class="btn btn-primary">Add
+                                Record</button>
+                            {{--  <button onclick="window.location='{{ route('add-record') }}'" class="btn btn-primary">Add
+                                Record</button> --}}
+                        </form>
+
 
                     </div>
                 </div>
